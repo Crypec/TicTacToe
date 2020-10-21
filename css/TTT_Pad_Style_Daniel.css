@@ -1,0 +1,19 @@
+body{
+    background-color:lightgrey;
+    font: normal 40px Comic,Comic,cursive;
+    color:black;
+}
+table{
+    background-color:white;
+    font: normal 40px Comic,Comic,cursive;
+    color:black;
+    border-style:solid;
+    border-color:black;
+    border-width: 5px;
+}
+h1{
+    font-style: normal;
+    font: normal 70px Comic,Comic,cursive;
+    color:black;
+    text-decoration:underline red;
+}
