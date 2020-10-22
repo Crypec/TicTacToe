@@ -3,7 +3,7 @@
  <HEAD>
   <link rel=stylesheet  id=style01 href="css/goldau01.css" ></link>
  </HEAD>
- <script language=javascript src=js/Goldau01.js >  </script>
+ <script language=javascript src="js/start.js" >  </script>
 
  <BODY id="background" > 
   <input type=button value="CSS neu" onClick=changeCSS()>
@@ -15,6 +15,12 @@
   Idee: ein Spielfeld (public)<BR>
   zwei "lokale" Sichten (je online-Spieler)<BR>
   Bisher: alles auf dieser einen Seite<BR>
+  <HR>
+  <U>Spielsymbole:</U><BR>
+  Spieler1<input type=text value=X id=symbolX><BR>
+  Spieler2<input type=text value=O id=symbol0><BR>
+  <input type=button onClick="startTTT();" id=startButton value="Spiel starten" ><BR>
+  aktueller Spieler:<input type=text value="" id=aktuell><BR>
   <HR>
   <TABLE width=100% border=1 class="pinkeTabelle" >
    <TR>
