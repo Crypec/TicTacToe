@@ -5,6 +5,69 @@
  </HEAD>
   <script language=javascript src="js/Goldau01.js" >  </script>
  <script language=javascript src="js/start.js" >  </script>
+ 
+  <script language=javascript >  
+  //aktuellen Spieler tauschen
+  // by Gr 22.10.2020
+  function toggle(b){
+  	var x1=document.getElementById("symbolX").value;
+	var x2=document.getElementById("symbol0").value;
+	var newBrick="";
+	
+	if(b== x1.value ){
+		newBrick=x2;
+	}else{
+		newBrick=x1;
+	}
+	document.getElementById("aktuell").value=newBrick;
+	document.getElementById("Msg").innerHTML=x1+" ist am Zug";
+  }
+  
+  // Basis für FeldSetzung
+  // by Gr 22.10.2020
+   function FeldClicked(feldObject){
+    var err=false;
+	var brick=document.getElementById("aktuell").value;
+    var id=feldObject.id;
+	document.getElementById("errMsg").innerHTML="";	
+		
+	//Test alert(id);
+	// pruefe,  ...
+	// ... ob 1. zugelassener Stein
+	if(!err){
+	 if(!isValid(brick)){
+	 	document.getElementById("errMsg").innerHTML=" aktueller Spielstein "+brick+" ist ung&uuml;ltig!";
+		err=true;
+		return;
+	 }
+	}
+	
+	// ...ob 2. Feld leer
+	if(!err){
+		if(feldObject.value.trim() != ""){
+	 	 document.getElementById("errMsg").innerHTML=" Feld ist schon belegt "+feldObject.value;
+		 err=true;
+		 return;
+		}
+	}	
+	// Gewinnprüfungen...
+	// fehlenden Code hier einsetzen
+	
+	
+	// ENDE: alles ok, Stein setzen
+	if(!err){
+	 feldObject.value=brick;
+	 toggle(brick);
+	 return;
+	}else{
+		 document.getElementById("errMsg").innerHTML=" unbekannter Fehler ";
+		 err=true;
+		 return;
+	}
+	
+	
+   }
+  </script>
 
  <BODY id="background" > 
   <input type=button value="CSS neu" onClick=changeCSS()>
@@ -20,7 +83,10 @@
   <U>Spielsymbole:</U><BR>
   Spieler1<input type=text value=X id=symbolX><BR>
   Spieler2<input type=text value=O id=symbol0><BR>
-  <input type=button onClick="startTTT();" id=startButton value="Spiel starten" ><BR>
+  
+  <input type=button onClick="startTTT();" id=startButton value="Spiel starten" >
+   <input type=button onClick="resetTTT();" id=resetButton value="Spielfeld l&uml;schen" >
+  <BR>
   <div style="color:red" id="errMsg" ></div><BR>
   aktueller Spieler:<input type=text value="" id=aktuell><BR>
     <div style="color:green" id="Msg" ></div><BR>
@@ -34,21 +100,21 @@
 	  <TD>1</TD><TD>2</TD><TD>3</TD></TR>
 	  </TR>
 	  <!--Feld Zeile Spalte  -->
-       <TD class="SpalteEins" ><span1><input type=text size=2 value="" id=F11> </span1></TD>
-      <TD class="SpalteEins"><span1><input type=text size=2 value="" id=F12></span1></TD>
-	  <TD class="SpalteEins"><span1><input type=text size=2 value="" id=F13></span1></TD>
+       <TD class="SpalteEins" ><span1><input type=text size=2 value="" id=F11 onClick="FeldClicked(this)" > </span1></TD>
+      <TD class="SpalteEins"><span1><input type=text size=2 value="" id=F12 onClick="FeldClicked(this)" ></span1></TD>
+	  <TD class="SpalteEins"><span1><input type=text size=2 value="" id=F13 onClick="FeldClicked(this)" ></span1></TD>
       </TR>
    
       <TR>
-       <TD class="SpalteZwei" ><span2><input type=text size=2 value="" id=F21></span2></TD>
-       <TD class="SpalteZwei" ><span2><input type=text size=2 value="" id=F22></span2></TD>
-	   <TD class="SpalteZwei" ><span2><input type=text size=2 value="" id=F23></span2></TD>
+       <TD class="SpalteZwei" ><span2><input type=text size=2 value="" id=F21 onClick="FeldClicked(this)" ></span2></TD>
+       <TD class="SpalteZwei" ><span2><input type=text size=2 value="" id=F22 onClick="FeldClicked(this)" ></span2></TD>
+	   <TD class="SpalteZwei" ><span2><input type=text size=2 value="" id=F23 onClick="FeldClicked(this)" ></span2></TD>
       </TR>
    
       <TR>
-       <TD class="SpalteDrei" ><span3><input type=text size=2 value="" id=F31> </span3></TD>
-       <TD class="SpalteDrei" ><span3><input type=text size=2 value="" id=F32></span3></TD>
-	   <TD class="SpalteDrei" ><span3><input type=text size=2 value="" id=F33></span3></TD>
+       <TD class="SpalteDrei" ><span3><input type=text size=2 value="" id=F31 onClick="FeldClicked(this)" > </span3></TD>
+       <TD class="SpalteDrei" ><span3><input type=text size=2 value="" id=F32 onClick="FeldClicked(this)" ></span3></TD>
+	   <TD class="SpalteDrei" ><span3><input type=text size=2 value="" id=F33 onClick="FeldClicked(this)" ></span3></TD>
       </TR>
 	 </TABLE>
    </TD>
