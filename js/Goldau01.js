@@ -10,6 +10,10 @@
 		//    document.getElementById("style01").href="css/"+"TTT_Pad_Can.css";
 
 		document.getElementById("style01").href="css\/"+css_files[i];
-		alert(css_files[i]+" \n weiter ...");//PAUSE
+		alert(document.getElementById("style01").href+" \n weiter ...");//PAUSE
 	}
+   }
+   
+   function changeCSSTo(destCSS){
+	   	document.getElementById("style01").href="css\/"+destCSS;
    }

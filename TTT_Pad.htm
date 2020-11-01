@@ -14,7 +14,7 @@
 	var x2=document.getElementById("symbol0").value;
 	var newBrick="";
 	
-	if(b== x1.value ){
+	if(b== x1 ){
 		newBrick=x2;
 	}else{
 		newBrick=x1;
@@ -70,8 +70,17 @@
   </script>
 
  <BODY id="background" > 
-  <input type=button value="CSS neu" onClick=changeCSS()>
+  <input type=button value="CSS neu (alle)" onClick=changeCSS()>
   <BR>
+  CSS neu:
+  <select id=CSSSelection>
+   <option value="Goldau01.css">Goldau01</option>
+   <option value="Torben_TTT_Pad.css">Torben_TTT_Pad</option>
+   <option value="TTT_Pad_Andrey.css">TTT_Pad_Andrey</option>
+   <option value="TTT_Pad_Laurin.css">TTT_Pad_Laurin</option>
+   <option value="TTT_Pad_Style_Daniel.css">TTT_Pad_Style_Daniel</option>
+  </select>
+  <input type=button value="CSS neu setzen" onClick='changeCSSTo(document.getElementById("CSSSelection").value);'>
   <HR>
   
   
