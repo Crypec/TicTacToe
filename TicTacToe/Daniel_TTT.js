@@ -35,15 +35,15 @@ document.addEventListener('DOMContentLoaded',function(){
                     && felder[3+i].getAttribute('aria-label') == felder [6+i].getAttribute('aria-label')
                 )   {
                         gewinner = felder[0+i].getAttribute('aria-label');
-                        zellenHervorheben([felder[i], felder[3+i], felder[6+i]]);
+                        highlighted([felder[i], felder[3+i], felder[6+i]]);
                     }
                 // 3 waagrecht
-                if (felder[i+3].getAttribute('aria-label')!= ""
+                if (felder[i*3].getAttribute('aria-label')!= ""
                     && felder[i*3].getAttribute('aria-label') == felder[i*3+1].getAttribute('aria-label')
                     && felder[i*3+1].getAttribute('aria-label') == felder[i*3+2].getAttribute('aria-label')
                 )   {
                         gewinner = felder[i*3].getAttribute('aria-label');
-                        zellenHervorheben([felder[3*i], felder[3*i+1], felder[3*i+2]]);
+                        highlighted([felder[i*3], felder[i*3+1], felder[i*3+2]]);
                     }
                 
                 // Diagonal links oben nach rechts unten
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded',function(){
                 && felder[4].getAttribute('aria-label') == felder[8].getAttribute('aria-label')
                 )   {
                         gewinner = felder[0].getAttribute('aria-label');
-                        zellenHervorheben([felder[0], felder[4], felder[8]]);
+                        highlighted([felder[0], felder[4], felder[8]]);
                     }
 
                 // Diagonal rechts oben nach links unten
@@ -61,20 +61,22 @@ document.addEventListener('DOMContentLoaded',function(){
                 && felder[4].getAttribute('aria-label') == felder[6].getAttribute('aria-label')
                 )   {
                         gewinner = felder[2].getAttribute('aria-label');
-                        zellenHervorheben([felder[2], felder[4], felder[6]]);
+                        highlighted([felder[2], felder[4], felder[6]]);
                     }  
                 
-                // Spiel fertig
+                // Spiel fertig?
                 if(voll || gewinner){
                         fertig = true;
                         if(gewinner == 'x' || gewinner == 'o'){
-                            Text.innerText = "Das Spiel ist zu Ende, weil Spieler " + gewinner + " gewonnen hat!";
-                            Text.className = "erfolg";  
+                            text.innerText = "Das Spiel ist zu Ende, weil der Spieler " + gewinner + " gewonnen hat!";
+                            text.className = "erfolg";  
                         }
                         else{
-                            Text.innerText="Das Spiel ist unentschieden, weil aller Felder belegt sind.";
-                            Text.className = "warnung";
+                            // Spiel zu Ende da alle Felder belegt sind
+                            text.innerText="Unentschieden";
+                            text.className = "warnung";
                         }
+                        //Neues Spiel?
                         var neuesSpiel = confirm("Neues Spiel?","");
                         if (neuesSpiel == true){
                             location.reload();
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded',function(){
                     }
             }
 
-            function zellenHervorheben(zellen){
+            function highlighted(zellen){
                 for (var i=0; i < 3; i++){
                     zellen[i].classList.add("highlighted")
                 }
