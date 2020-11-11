@@ -1,15 +1,21 @@
 body{
-    background-color:lightgrey;
+    background-color:black;
     font: normal 40px Comic,Comic,cursive;
+    color:white;
+}
+#Text{
+    text-align: center;
+
 }
 .ttt #spielfeld{
     width: 60vmin;
 	height: 60vmin;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 0;
+    gap: 0;
+    position:absolute; top:30%;right:35%;
 }
-.ttt button{
+.ttt .box{
     width:20vmin;
     height:20vmin;
     background:white;
@@ -18,10 +24,10 @@ body{
     font:0/0 transparent;
 }
 .ttt [aria-label="x"]{
-    background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201%201%22%3E%3Cline%20x1%3D%220.1%22%20y1%3D%220.1%22%20x2%3D%220.9%22%20y2%3D%220.9%22%20stroke-width%3D%220.1%22%20stroke%3D%22red%22%2F%3E%3Cline%20x1%3D%220.1%22%20y1%3D%220.9%22%20x2%3D%220.9%22%20y2%3D%220.1%22%20stroke-width%3D%220.1%22%20stroke%3D%22red%22%2F%3E%3C%2Fsvg%3E');
+    background-image:url('RotesX.svg');
 }
 .ttt [aria-label="o"]{
-    background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201%201%22%3E%3Ccircle%20cx%3D%220.5%22%20cy%3D%220.5%22%20r%3D%220.4%22%20fill%3D%22none%22%20stroke-width%3D%220.1%22%20stroke%3D%22blue%22%2F%3E%3C%2Fsvg%3E');
+    background-image:url('BlauesKreis.svg');
 }
 .ttt .highlighted{
     background-color:darkgreen;
@@ -32,4 +38,14 @@ body{
 .erfolg{
     color:darkgreen;
 
+}
+#sz{
+    font: normal 14px Comic,Comic,cursive;
+    text-align: center;
+    position: absolute;top:84.9%;right:25%;
+    width:15vmin;
+    height:5vmin;
+    background:white;
+    border:3px solid grey;
+    margin:0;
 }

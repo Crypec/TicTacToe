@@ -1,0 +1,30 @@
+body{
+    background-color:black;
+
+}
+#ueberschrift{
+    color:white;
+    font: normal 60px Comic,Comic,cursive;
+    text-align: center;
+
+}
+#btn1{
+    font: normal 40px Comic,Comic,cursive;
+    text-align: center;
+    position: absolute;top:30%;right:35%;
+    width:50vmin;
+    height:15vmin;
+    background:white;
+    border:3px solid grey;
+    margin:0;
+}
+#btn2{
+    font: normal 40px Comic,Comic,cursive;
+    text-align: center;
+    position: absolute;top:50%;right:35%;
+    width:50vmin;
+    height:15vmin;
+    background:white;
+    border:3px solid grey;
+    margin:0;
+}

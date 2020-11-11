@@ -6,16 +6,17 @@ document.addEventListener('DOMContentLoaded',function(){
         spieler = [ 'x', 'o'],
         gewinner,
         fertig, 
-        felder = document.querySelectorAll('#spielfeld button'), 
         text = document.querySelector('#Text');
 
-        function feldMarkiert(e){ // Funktion überprüft ob das feld markiert ist
+        function feldMarkiert(e){ // Markiert Feld
+            if(!gewinner && !fertig){
             var feld = e.target;
             feld.setAttribute('aria-label', spieler[momentanerSpieler]);
             feld.setAttribute('disabled','disabled');
             momentanerSpieler = 1 - momentanerSpieler;
             text.innerText = 'Spieler ' + spieler[momentanerSpieler] + ' ist am Zug.';
-            ueberpruefeObFertig();
+             ueberpruefeObFertig();
+            }
         }
         // Funktion überprüft ob die Runde zu ende ist
         function ueberpruefeObFertig(){
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded',function(){
                 )   {
                         gewinner = felder[2].getAttribute('aria-label');
                         highlighted([felder[2], felder[4], felder[6]]);
+
                     }  
                 
                 // Spiel fertig?
@@ -76,12 +78,7 @@ document.addEventListener('DOMContentLoaded',function(){
                             text.innerText="Unentschieden";
                             text.className = "warnung";
                         }
-                        //Neues Spiel?
-                        var neuesSpiel = confirm("Neues Spiel?","");
-                        if (neuesSpiel == true){
-                            location.reload();
-                            return false;
-                        }
+
                     }
             }
 
@@ -90,6 +87,11 @@ document.addEventListener('DOMContentLoaded',function(){
                     zellen[i].classList.add("highlighted")
                 }
             }
+
         }
+
+
+
+
     }
     );
