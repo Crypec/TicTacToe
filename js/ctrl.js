@@ -9,18 +9,18 @@ function ctrl(evnt) {
   const game = loadGameState();
 
   const { x, y } = parseEventID(evnt.id);
-	// FIXME(Simon): Throws exception if cell is not free.
-	// FIXME(Simon): This should not fail silently!
-	game.setPlayer(x, y);
-	render(game);
+  // FIXME(Simon): Throws exception if cell is not free.
+  // FIXME(Simon): This should not fail silently!
+  game.setPlayer(x, y);
+  render(game);
   if (game.hasWinner()) {
-	const winner = Board.cellStateToString(game.current);
-	alert(`Game has Winner ${winner}`);
-	reset();
-	return;
+    const winner = Board.cellStateToString(game.current);
+    alert(`Game has Winner ${winner}`);
+    reset();
+    return;
   } else if (game.isFull()) {
-	alert("Board is full :c!");
-	return;
+    alert("Board is full :c!");
+    return;
   }
 
   // TODO(Simon): Toggle current Player Field in HTML
@@ -32,8 +32,8 @@ function parseEventID(idStr) {
   const xStr = idStr.substring(0, 2);
   const yStr = idStr.substring(3, 5);
   return {
-	x: parseInt(xStr),
-	y: parseInt(yStr),
+    x: parseInt(xStr),
+    y: parseInt(yStr),
   };
 }
 
