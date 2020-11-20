@@ -14,13 +14,13 @@ function ctrl(evnt) {
   game.setPlayer(x, y);
   render(game);
   if (game.hasWinner()) {
-	const winner = Board.cellStateToString(game.current);
-	alert(`Game has Winner ${winner}`);
-	reset();
-	return;
+    const winner = Board.cellStateToString(game.current);
+    alert(`Game has Winner ${winner}`);
+    reset();
+    return;
   } else if (game.isFull()) {
-	alert("Board is full :c!");
-	return;
+    alert("Board is full :c!");
+    return;
   }
 
   // TODO(Simon): Toggle current Player Field in HTML
@@ -31,11 +31,11 @@ function ctrl(evnt) {
 function parseEventID(idStr) {
   const cordinates = idStr.split("#");
   if (cordinates.length > 2) {
-	throw new Error("Invalid EventID format use: x#y");
+    throw new Error("Invalid EventID format use: x#y");
   }
   return {
-	x: parseInt(cordinates[0]),
-	y: parseInt(cordinates[1]),
+    x: parseInt(cordinates[0]),
+    y: parseInt(cordinates[1]),
   };
 }
 
