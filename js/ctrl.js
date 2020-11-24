@@ -5,6 +5,9 @@ function init() {
   document.getElementById(GAME_STATE_TAG).value = JSON.stringify(board);
 }
 
+
+
+
 function ctrl(evnt) {
   const game = loadGameState();
 
