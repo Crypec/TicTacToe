@@ -1,0 +1,52 @@
+body
+{background-color:black;color:white;font: normal 40px Comic,Comic,cursive;}
+
+input{background-color:#C0C0C0;color:#404000;font-family:arial;border-radius: 5px 5px 5px 5px;width:4em}
+option{background-color:#C0C0C0}
+select{background-color:#C0C0C0;border-radius: 5px 5px 5px 5px;}
+
+TABLE{
+    border-style:solid;border-color:white;border-width:5px;border-radius: 5px 5px 5px 5px;
+}
+TD {color:white;font-weight:bold;height:3em;text-align:center;}
+
+.Sp01 {
+    background-color:darkgrey
+}
+.Sp02 {
+    background-color:darkgrey
+}
+.Sp03 {
+    background-color:darkgrey
+}
+
+.T00{
+    width:0%;
+    height:0%;
+    border-width:0px;
+}
+
+.T01{
+    position:absolute;
+    bottom:20%;
+    left:200px;
+    width:30%;
+    z-index:10;
+}
+.T02{
+    position:absolute;
+    bottom:30%;
+    left:500px;
+    width:30%;
+    z-index:8;
+    opacity: 0.6;
+}
+
+.T03{
+    position:absolute;
+    bottom:40%;
+    left:700px;
+    width:30%;
+    z-index:6;
+    opacity: 0.3;
+}
