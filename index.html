@@ -3,12 +3,13 @@
 <style>
   body{
     font-size: 100px;
+    monospace 
     }
     table{
       border: 1px solid black;
     }
     td{
-      border: 1px solid black;
+      border: 1px solid rgb(47, 0, 255);
     }
     
 </style>
@@ -30,59 +31,61 @@
     <input type="button" onClick="reset();" id="resetButton" value="reset" />
     <table class="T01"> 
       <tr>
-        <td class="Sp01 Z01 D01" id="00#00" onClick="ctrl(this)">T</td>
-        <td class="Sp02 Z01" id="00#01" onClick="ctrl(this)">I</td>
-        <td class="Sp03 Z01 D02" id="00#02" onClick="ctrl(this)">C</td>
+        <td class="Sp01 Z01 D01" id="00#00#00" onClick="ctrl(this)">T</td>
+        <td class="Sp02 Z01" id="00#01#00" onClick="ctrl(this)">I</td>
+        <td class="Sp03 Z01 D02" id="00#02#00" onClick="ctrl(this)">C</td>
       </tr>
 
       <tr>
-        <td class="Sp01 Z02" id="01#00" onClick="ctrl(this)">T</td>
-        <td class="Sp02 Z02 D01 D02" id="01#01" onClick="ctrl(this)">A</td>
-        <td class="Sp03 Z02" id="01#02" onClick="ctrl(this)">C</td>
+        <td class="Sp01 Z02" id="01#00#00" onClick="ctrl(this)">T</td>
+        <td class="Sp02 Z02 D01 D02" id="01#01#00" onClick="ctrl(this)">A</td>
+        <td class="Sp03 Z02" id="01#02#00" onClick="ctrl(this)">C</td>
       </tr>
 
       <tr>
-        <td class="Sp01 Z03 D02" id="02#00" onClick="ctrl(this)">T</td>
-        <td class="Sp02 Z03" id="02#01" onClick="ctrl(this)">O</td>
-        <td class="Sp03 Z03 D01" id="02#02" onClick="ctrl(this)">E</td>
+        <td class="Sp01 Z03 D02" id="02#00#00" onClick="ctrl(this)">T</td>
+        <td class="Sp02 Z03" id="02#01#00" onClick="ctrl(this)">O</td>
+        <td class="Sp03 Z03 D01" id="02#02#00" onClick="ctrl(this)">E</td>
       </tr>
     </table>
-    <table class="T01" > 
+
+    <table class="T02" > 
       <tr>
-        <td class="Sp01 Z01 D01" id="00#00" onClick="ctrl(this)">T</td>
-        <td class="Sp02 Z01" id="00#01" onClick="ctrl(this)">I</td>
-        <td class="Sp03 Z01 D02" id="00#02" onClick="ctrl(this)">C</td>
+        <td class="Sp01 Z01 D01" id="00#00#01" onClick="ctrl(this)">T</td>
+        <td class="Sp02 Z01" id="00#01#01" onClick="ctrl(this)">I</td>
+        <td class="Sp03 Z01 D02" id="00#02#01" onClick="ctrl(this)">C</td>
       </tr>
 
       <tr>
-        <td class="Sp01 Z02" id="01#00" onClick="ctrl(this)">T</td>
-        <td class="Sp02 Z02 D01 D02" id="01#01" onClick="ctrl(this)">A</td>
-        <td class="Sp03 Z02" id="01#02" onClick="ctrl(this)">C</td>
+        <td class="Sp01 Z02" id="01#00#02" onClick="ctrl(this)">T</td>
+        <td class="Sp02 Z02 D01 D02" id="01#01#02" onClick="ctrl(this)">A</td>
+        <td class="Sp03 Z02" id="01#02#02" onClick="ctrl(this)">C</td>
       </tr>
 
       <tr>
-        <td class="Sp01 Z03 D02" id="02#00" onClick="ctrl(this)">T</td>
-        <td class="Sp02 Z03" id="02#01" onClick="ctrl(this)">O</td>
-        <td class="Sp03 Z03 D01" id="02#02" onClick="ctrl(this)">E</td>
+        <td class="Sp01 Z03 D02" id="02#00#01" onClick="ctrl(this)">T</td>
+        <td class="Sp02 Z03" id="02#01#01" onClick="ctrl(this)">O</td>
+        <td class="Sp03 Z03 D01" id="02#02#01" onClick="ctrl(this)">E</td>
       </tr>
     </table>
-    <table class="T01" > 
+
+    <table class="T03" > 
       <tr>
-        <td class="Sp01 Z01 D01" id="00#00" onClick="ctrl(this)">T</td>
-        <td class="Sp02 Z01" id="00#01" onClick="ctrl(this)">I</td>
-        <td class="Sp03 Z01 D02" id="00#02" onClick="ctrl(this)">C</td>
+        <td class="Sp01 Z01 D01" id="00#00#02" onClick="ctrl(this)">T</td>
+        <td class="Sp02 Z01" id="00#01#02" onClick="ctrl(this)">I</td>
+        <td class="Sp03 Z01 D02" id="00#02#02" onClick="ctrl(this)">C</td>
       </tr>
 
       <tr>
-        <td class="Sp01 Z02" id="01#00" onClick="ctrl(this)">T</td>
-        <td class="Sp02 Z02 D01 D02" id="01#01" onClick="ctrl(this)">A</td>
-        <td class="Sp03 Z02" id="01#02" onClick="ctrl(this)">C</td>
+        <td class="Sp01 Z02" id="01#00#02" onClick="ctrl(this)">T</td>
+        <td class="Sp02 Z02 D01 D02" id="01#01#02" onClick="ctrl(this)">A</td>
+        <td class="Sp03 Z02" id="01#02#02" onClick="ctrl(this)">C</td>
       </tr>
 
       <tr>
-        <td class="Sp01 Z03 D02" id="02#00" onClick="ctrl(this)">T</td>
-        <td class="Sp02 Z03" id="02#01" onClick="ctrl(this)">O</td>
-        <td class="Sp03 Z03 D01" id="02#02" onClick="ctrl(this)">E</td>
+        <td class="Sp01 Z03 D02" id="02#00#02" onClick="ctrl(this)">T</td>
+        <td class="Sp02 Z03" id="02#01#02" onClick="ctrl(this)">O</td>
+        <td class="Sp03 Z03 D01" id="02#02#02" onClick="ctrl(this)">E</td>
       </tr>
     </table>
     <input type="button" id="button01" value="senden..." />
