@@ -1,0 +1,83 @@
+ #all{
+
+		width:80%;
+		height:80%;
+		border-style:solid;
+		border-width:5px;
+		border-color:#C0C0C0;
+		opacity:1;
+		background-color:#808080;
+		position: absolute;
+		z-index:0;
+
+		perspective: 800px;
+		xtransform-style: preserve-3d;/* div schneidet sons senlrecht die Click-Area*/
+  }
+  
+  table{
+		border-style:solid;
+		border-width:10px;
+		border-right-color:red;
+		border-bottom-color:green;
+				
+		left: 20%;
+		height:100px;
+		width:100px;
+		z-index:2;
+		
+		
+
+		position: relative;
+	}
+  
+
+	.T01 {
+
+
+		background-color:red;
+		opacity:0.4;
+
+		z-index:10;/* on top*/
+
+		transform: rotateX(70deg) rotateY(0deg)  rotateZ(30deg) 
+		translateX(00px) translateY(0px) translateZ(0px);
+	}
+	
+	.T01:hover {
+		opacity:1;
+	}
+	
+	.T02 {
+
+		background-color:darkgreen;
+		opacity: 0.4;
+
+		z-index:5;/* on middle*/
+
+		transform: rotateX(70deg) rotateY(0deg)  rotateZ(32deg) 
+		translateX(00px) translateY(-00px) translateZ(65px);
+	}
+	
+	.T02:hover {
+		opacity: 1;
+		transform: rotateX(70deg) rotateY(0deg)  rotateZ(32deg) 
+		translateX(00px) translateY(40px) translateZ(65px);
+	}
+	
+	.T03 {
+	
+		background-color:blue;
+
+		opacity: 1.0;
+		z-index:1;/* on top*/
+
+		transform: rotateX(70deg) rotateY(0deg)  rotateZ(34deg) 
+		translateX(00px) translateY(-00px) translateZ(140px);
+	}
+	
+	.T03:hover{
+
+		transform: rotateX(70deg) rotateY(0deg)  rotateZ(34deg) 
+		translateX(00px) translateY(40px) translateZ(140px);
+	}
+	

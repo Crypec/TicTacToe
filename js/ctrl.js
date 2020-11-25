@@ -5,9 +5,9 @@ function init() {
   document.getElementById(GAME_STATE_TAG).value = JSON.stringify(board);
 }
 
-function ctrl(evnt) {
+function ctrlOFF(evnt) {
   const game = loadGameState();
-
+/* upper Table ID alert(evnt.parentNode.parentNode.parentNode.id);*/
   const { x, y } = parseEventID(evnt.id);
   // FIXME(Simon): Throws exception if cell is not free.
   // FIXME(Simon): This should not fail silently!
@@ -15,7 +15,7 @@ function ctrl(evnt) {
   render(game);
   if (game.hasWinner()) {
     const winner = Board.cellStateToString(game.current);
-    alert(`Game has Winner ${winner}`);
+    alert(`Game has Winner ${winner}`);// als msg=>html, ohne alert()
     reset();
     return;
   } else if (game.isFull()) {
