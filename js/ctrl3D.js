@@ -4,7 +4,7 @@ function init() {
 
   const board = new Board3D();
   saveGameState3D(board);//  document.getElementById(GAME_STATE_TAG).value = JSON.stringify(board);
-console.log(board);
+
 }
 
 function ctrl(evnt) {
@@ -16,28 +16,38 @@ function ctrl(evnt) {
   // FIXME(Simon): This should not fail silently!
   game.setPlayer3D(T,x, y);
 
+  // TODO(Simon): Toggle current Player Field in HTML
+  let _parent=document.getElementById("T0"+(T+1));//##leadin ZERO: ok <100
+  render3D(_parent,("00"+y).slice(-2)+"#"+("00"+x).slice(-2),Board.cellStateToString(game.current),0);//##leadin ZERO !
+  
   if (game.hasWinner3D()) {
-    const winner = Board3D.cellStateToString(game.current);
+    const winner = Board.cellStateToString(game.current);
     alert(`Game has Winner ${winner}`);// als msg=>html, ohne alert()
-    reset();
+    reset3D();
     return;
   } else if (game.isFull3D()) {
     alert("Board is full :c!");
     return;
   }
-
-  // TODO(Simon): Toggle current Player Field in HTML
-  render3D("T0"+(T+1),"0"+y+"#0"+x,Board.cellStateToString(game.current));
-
+  
   game.togglePlayer3D();
   saveGameState3D(game);
 }
-
+function getOuterParentID(obj){
+	if(obj.tagName.toUpper=="BODY") return -1;
+	if(obj.parentNode.hasAttribute("id")){
+		return obj.parentNode.id;
+	}else{
+		return getOuterParentID(obj.parentNode);
+	}
+}
 function parseEventID(obj) {
   idStr=obj.id;	
   const xStr = idStr.substring(3, 5);
   const yStr = idStr.substring(0, 2);
-  const TStr=obj.parentNode.parentNode.parentNode.id.substring(1,2);//upper Table ID
+  //const TStr=obj.parentNode.parentNode.parentNode.id.substring(1,2);//upper Table ID
+  const TStr=getOuterParentID(obj).substr(1,2)-1;"01"-1
+
   return {
 	T: parseInt(TStr),
     x: parseInt(xStr),
@@ -77,7 +87,6 @@ function deepCopyValues(struct,data){
      }  
 	}
 	return;
-
 }
 function loadGameState3D() {
   const gameStr = document.getElementById(GAME_STATE_TAG).value;
@@ -85,6 +94,7 @@ function loadGameState3D() {
   let tmp = new Board3D();
 
   tmp=Object.assign(new Board3D(), JSON.parse(gameStr));
+
   deepCopyValues(board,tmp);
 
   return board;
@@ -95,7 +105,9 @@ function saveGameState3D(game) {
   document.getElementById(GAME_STATE_TAG).value = JSON.stringify(game);
 }
 
-function reset() {
-  init();
-  render(loadGameState());
+function reset3D() { 
+  init();//reset data
+  // UI
+  renderAll3D();
+ //## render(loadGameState());
 }

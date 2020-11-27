@@ -1,6 +1,6 @@
 const GAME_STATE_TAG = "GAMEBOARD";
 
-function init() {
+function initOFF() {
   const board = new Board();
   document.getElementById(GAME_STATE_TAG).value = JSON.stringify(board);
 }

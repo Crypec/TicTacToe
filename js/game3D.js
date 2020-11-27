@@ -14,6 +14,7 @@ current
 
 class Board3D {
   constructor() {
+	  /*
 	 let c=new Board();
 	 let b=new Board();
 	 let b1=JSON.stringify(new Board());
@@ -22,12 +23,14 @@ class Board3D {
 	 let b3=JSON.stringify(new Board());
 	 let cStr='['+b1+','+b2+','+b3+']';
 	 let cObj=JSON.parse(cStr);//kills indiv. prototyp-functions
-	 
+	 */
+	 let b0=new Board();
 	 this.cells3D=new Array();
-	 this.cells3D.push(new Board());
-	 this.cells3D.push(new Board());
-	 this.cells3D.push(new Board());
-
+	 for(var i=0;i<b0.cells[0].length;i++){
+		this.cells3D.push(b0);
+		this.cells3D.push(new Board());
+		this.cells3D.push(new Board());
+	 }
     this.current = CellState.Player.PLAYER1;
   }
 
@@ -73,10 +76,13 @@ class Board3D {
   */
   hasWinner3D() {
     let hasWinner = false;
-	
-    for (let T = 0; T < this.cells3D.length; T++) { //top-view-levels
-      hasWinner |= this.cells3D[0].hasWinner() //this.checkRow(i);
+	//top-view-LEVELS
+	//horizontal slice
+    for (let T = 0; T < this.cells3D.length; T++) { 
+      hasWinner |= this.cells3D[T].hasWinner() //this.checkRow(i);
     }
+	
+	//vertical slice
  /*   for (let i = 0; i < this.cells.length; i++) { //side-view-boards
       hasWinner |= this.checkCol(i);
     }
