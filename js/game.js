@@ -120,8 +120,9 @@ class Board {
 
     if (first == CellState.FREE) return false;
 
-    for (let i = len - 1; i > 0; i--) {
-      if (first != this.cells[i][i]) {
+    for (let i = 0; i < len; i++) {
+//bugy: same as above      if (first != this.cells[i][i]) {
+	if (first != this.cells[(len - 1) - i][i]) {
         return false;
       }
     }

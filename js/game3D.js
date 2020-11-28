@@ -76,13 +76,53 @@ class Board3D {
   */
   hasWinner3D() {
     let hasWinner = false;
+	let size=this.cells3D[0].cells.length;
 	//top-view-LEVELS
 	//horizontal slice
     for (let T = 0; T < this.cells3D.length; T++) { 
       hasWinner |= this.cells3D[T].hasWinner() //this.checkRow(i);
     }
 	
-	//vertical slice
+	//vertical slice: front 2 rear
+	let slice=new Board();
+	for(var y=0;y<size;y++){
+	 for(var T=0;T<size;T++){
+		for(var x=0;x<size;x++){
+			slice.cells[T][x]=this.cells3D[T].cells[y][x];
+		}
+	 }
+	 hasWinner |= slice.hasWinner();
+	}
+	
+	
+	//vertical slice: left 2 right
+	slice=new Board();
+	for(var x=0;x<size;x++){
+	 for(var T=0;T<size;T++){
+		for(var y=0;y<size;y++){
+			slice.cells[T][y]=this.cells3D[T].cells[y][x];
+		}
+	 }
+	 hasWinner |= slice.hasWinner();
+	}
+
+	//diag1-slice: 
+	slice=new Board();
+    for(var T=0;T<size;T++){
+	 for(var i=0;i<size;i++){
+			slice.cells[T][i]=this.cells3D[T].cells[i][i];
+	 }
+	 hasWinner |= slice.hasWinner();
+	}
+	//diag2-slice: 
+	slice=new Board();
+    for(var T=0;T<size;T++){
+	 for(var i=0;i<size;i++){
+			slice.cells[T][i]=this.cells3D[T].cells[(size - 1) - i][i];
+	 }
+	 hasWinner |= slice.hasWinner();
+	}
+	
  /*   for (let i = 0; i < this.cells.length; i++) { //side-view-boards
       hasWinner |= this.checkCol(i);
     }

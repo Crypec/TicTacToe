@@ -1,0 +1,41 @@
+ #all{
+
+		border-style:solid;
+		border-width:5px;
+		border-color:#C0C0C0;
+ 
+		background-color:#808080;
+
+  }
+  
+  table{
+
+		border-right-color:red;
+		border-bottom-color:green;
+
+	}
+
+
+	.T01 {
+
+
+		background-color:red;
+
+	}
+
+	.T02 {
+
+		background-color:darkgreen;
+		
+	}
+	
+
+	
+	.T03 {
+	
+		background-color:blue;
+
+	}
+
+	
+	TD:hover{border-style:solid;border-width:3px;border-color:white}
