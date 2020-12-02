@@ -1,0 +1,9 @@
+	table{border-style:none}
+	.Sp02 {
+		border-left-style:solid; border-left-width:5px;border-left-color:grey;
+	 	border-right-style:solid; border-right-width:5px;border-right-color:grey;
+	}
+	.Z02 {
+		border-top-style:solid; border-top-width:5px;border-top-color:grey;
+	 	border-bottom-style:solid; border-bottom-width:5px;border-bottom-color:grey;
+	}
