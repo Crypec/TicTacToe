@@ -27,8 +27,6 @@ class Board3D {
 	 let b0=new Board();
 	 this.cells3D=new Array();
 	 for(var i=0;i<b0.cells[0].length;i++){
-		this.cells3D.push(b0);
-		this.cells3D.push(new Board());
 		this.cells3D.push(new Board());
 	 }
     this.current = CellState.Player.PLAYER1;

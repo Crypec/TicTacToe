@@ -33,10 +33,11 @@ function render3D(aktParent, childId, newContent,depth){
 	 //console.log("finished "+aktParent.tagName);
 	 return erg;
 }
-function renderAll3D(){
-	let newContent=Board.cellStateToString(CellState.FREE);
-	let b=new Board();
-	let size=b.cells[0].length;
+function renderAll3D(b){ //RESET
+	//let newContent=Board.cellStateToString(CellState.FREE);
+	//let b=new Board();
+	let size=b.cells3D.length;
+
 	for(var T=0;T<size;T++){
 		TStr="T"+("00"+(T+1)).slice(-2);
 		for(var y=0;y<size;y++){
@@ -44,6 +45,7 @@ function renderAll3D(){
 			for(var x=0;x<size;x++){
 				xStr=("00"+x).slice(-2);
 				aktP=document.getElementById(TStr);
+				let newContent=Board.cellStateToString( b.cells3D[T].cells[y][x] );
 				render3D(aktP, yStr+"#"+xStr, newContent,0)
 			}
 		}

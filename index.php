@@ -14,10 +14,18 @@
 
     <!-- <script language="javascript" src="js/Goldau01.js"></script> -->
   </head>
-  <!-- ## keine freie Symbolwahl durch Spieler -->
-  <input type="xhidden" id="GAMEBOARD" name="GAMEBOARD" value="" size=80 /><!-- ##disabled Gr -->
+ <body id="background" ><!-- onload="init()"  init after loading finished, see below -->
+  <FORM method=POST action="php/TTT_Receive02.php">
+   <!-- ## keine freie Symbolwahl durch Spieler -->
+   <input type="xhidden" id="GAMEBOARD" name="GAMEBOARD" 
+   <?php include("php/globalValues.php");
+   $datei=file("data/".$GAMEBOARDDATAFILE);  
+   $TTTstatus=$datei[0];
+   echo "value='".$TTTstatus."'"; 
+   ?> 
+   size=80 /><!-- ##disabled Gr -->
 
-  <body id="background" onload="init()">
+ 
    <input type="button" onClick="reset();" id="resetButton" value="reset" />
    <div id="all">
     <table class="T01" id="T01">
@@ -75,6 +83,11 @@
       </tr>
     </table>
    </DIV>
-   <input type="button" id="button01" value="senden..." />
-  </body>
+   <input type="submit" id="button01" value="senden..." />
+  </FORM>
+  <script>
+   // init after loading-process finished
+   init();
+  </script>
+ </body>
 </html>

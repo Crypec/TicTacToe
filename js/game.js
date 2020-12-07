@@ -132,11 +132,11 @@ class Board {
   static cellStateToString(cellState) {
     switch (cellState) {
       case CellState.FREE:
-        return "#";
+        return "<img src='https://acegif.com/wp-content/uploads/frohe-weihnachten-gif-bilder-122.gif' width=30>";//"#";
       case CellState.Player.PLAYER1:
-        return "X";
+        return "<img src='https://upload.wikimedia.org/wikipedia/commons/d/d3/Animated_letter_X_upper_case.gif' width=30>";//"X";
       case CellState.Player.PLAYER2:
-        return "0";
+        return "<img src='https://img2.dreamies.de/img/665/b/aehs5s0g3ug.gif' width=30>";//"0";
     }
   }
 }
