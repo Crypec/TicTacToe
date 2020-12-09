@@ -5,12 +5,11 @@ function init() {
   //nur, falls status-feld leer
 
   let TTTstatus=document.getElementById(GAME_STATE_TAG).value;
+  let board = new Board3D();
   
   if(TTTstatus.trim()==""){
-	const board = new Board3D();
 	saveGameState3D(board);//  document.getElementById(GAME_STATE_TAG).value = JSON.stringify(board);
   }else{
-    let board = new Board3D();
 	board = loadGameState3D();
 	
 	renderAll3D(board);
@@ -26,6 +25,7 @@ function init() {
 	  return;
     }//else
   }
+  alert(board.current+":"+Board.cellStateToString(board.current)+"\nist am Zug");
   return;
 }
 

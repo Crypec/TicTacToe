@@ -25,8 +25,9 @@
    ?> 
    size=80 /><!-- ##disabled Gr -->
 
- 
-   <input type="button" onClick="reset();" id="resetButton" value="reset" />
+   <BR>
+   <input type="button" onClick="reset();" id="resetButton" value="reset" /><BR>
+
    <div id="all">
     <table class="T01" id="T01">
       <tr >
